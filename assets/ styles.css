@@ -1,0 +1,113 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #231e4a;
+    color: #e2c7fb;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.introduction {
+    background-color: #121212;
+    color: #e2c7fb;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.introduction h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    background-color: #121212;
+}
+
+.introduction p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 20px;
+}
+
+.dropdown-label {
+    color: #e2c7fb;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    align-items: left;
+}
+
+.dropdown-container .Select-control {
+    background-color: #e2c7fb!important;
+    border-radius: 4px !important;
+}
+
+.dropdown-container .Select-menu-outer {
+    background-color: #231e4a !important;
+    color: white !important;
+}
+
+.dropdown-container .Select-option {
+    background-color: #231e4a !important;
+}
+
+.dropdown-container .Select-option.is-focused {
+    background-color: #ffffff !important;
+    color: rgb(249, 249, 249) !important;
+}
+
+.graph-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.graph {
+    height: 400px;
+    box-sizing: border-box;
+}
+
+.footer {
+    background-color: #231e4a;
+    color: #e2c7fb;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 30px;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .graph-container {
+        flex-direction: column;
+    }
+
+    .graph {
+        height: 300px;
+    }
+}
