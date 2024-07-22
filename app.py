@@ -27,6 +27,8 @@ app = dash.Dash(__name__, external_stylesheets=[
     './assets/styles.css'
 ])
 
+server = app.server
+
 app.layout = html.Div([
     html.Div(className='header', children=[
         html.H1('Mobile Money Usage In Tanzania', className='mb-0')
