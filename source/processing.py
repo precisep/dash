@@ -359,15 +359,15 @@ def update_fig_layout(fig, title_text, xaxis_title, yaxis_title):
         legend_title_text="Financial Services Access",
         legend_title_font=dict(size=12, color='white'),
         legend=dict(
-            orientation="h",  # Horizontal orientation
+            orientation="h",  
             title_font=dict(size=12, color='white'),
-            font=dict(size=8, color='white'),  # Smaller font size
-            yanchor="bottom",  # Place legend at the bottom
-            y=-0.2,  # Adjust vertical position
+            font=dict(size=8, color='white'), 
+            yanchor="bottom", 
+            y=-1, 
             xanchor="center",
             x=0.5,
         ),
-        margin=dict(t=50, b=100, l=50, r=50),  # Increase bottom margin to accommodate the legend
+        margin=dict(t=50, b=100, l=50, r=50),  
         autosize=True,
         width=None,
         height=None
