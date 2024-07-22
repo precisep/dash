@@ -403,7 +403,7 @@ def financial_service_by_age_graph(selected_classification):
         hover_name="financial_service_classification",
     )
 
-    fig.update_traces(marker=dict(size=12, opacity=0.8))
+    fig.update_traces(marker=dict(size=7, opacity=0.8))
     update_fig_layout(fig, "Number of Participants at Each Age by Financial Service Classification", "Age", "Number of Participants")
     return fig
 
