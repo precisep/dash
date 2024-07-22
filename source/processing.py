@@ -381,7 +381,6 @@ def age_distribution_graph(maped_financial_services_df):
         hover_data=["financial_service_classification"],
     )
     update_fig_layout(fig, "Age Distribution by Financial Service Classification", "Financial Service Classification", "Age")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def financial_service_by_age_graph(selected_classification):
@@ -406,7 +405,6 @@ def financial_service_by_age_graph(selected_classification):
 
     fig.update_traces(marker=dict(size=7, opacity=0.8))
     update_fig_layout(fig, "Number of Participants at Each Age by Financial Service Classification", "Age", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def gender_vs_financial_services(selected_classification):
@@ -420,7 +418,6 @@ def gender_vs_financial_services(selected_classification):
         title="Relationship Between Gender and Access to Financial Services",
     )
     update_fig_layout(fig, "Relationship Between Gender and Access to Financial Services", "Gender", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def marital_status_vs_financial_services(selected_classification):
@@ -433,7 +430,6 @@ def marital_status_vs_financial_services(selected_classification):
         labels={"marital_status": "Marital Status", "count": "Number of Participants"}
     )
     update_fig_layout(fig, "Relationship Between Marital Status and Access to Financial Services", "Marital Status", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def personal_land_ownership_vs_financial_services(selected_classification):
@@ -446,7 +442,6 @@ def personal_land_ownership_vs_financial_services(selected_classification):
         labels={"personal_land_ownership": "Personal Land Ownership", "count": "Number of Participants"},
     )
     update_fig_layout(fig, "Personal Land Ownership and Access to Financial Services", "Personal Land Ownership", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def main_items_sold_vs_financial_services(selected_classification):
@@ -461,7 +456,6 @@ def main_items_sold_vs_financial_services(selected_classification):
         labels={"main_items_sold": "Main Items Sold", "count": "Number of Participants"},
     )
     update_fig_layout(fig, "Main Items Sold by Traders/Sellers by Financial Service Access", "Main Items Sold", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def employment_type_vs_financial_services(selected_classification):
@@ -476,7 +470,6 @@ def employment_type_vs_financial_services(selected_classification):
         labels={"employer": "Employment Type", "count": "Number of Participants"},
     )
     update_fig_layout(fig, "Employment Type for Salary/Wage Earners by Financial Service Access", "Employment Type", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def main_services_provided_vs_financial_services(selected_classification):
@@ -491,7 +484,6 @@ def main_services_provided_vs_financial_services(selected_classification):
         labels={"main_services_provided": "Main Services Provided", "count": "Number of Participants"},
     )
     update_fig_layout(fig, "Main Services Provided by Service Providers by Financial Service Access", "Main Services Provided", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def land_ownership_vs_financial_services(selected_classification):
@@ -505,7 +497,6 @@ def land_ownership_vs_financial_services(selected_classification):
         labels={"land_ownership": "Land Ownership", "count": "Number of Participants"},
     )
     update_fig_layout(fig, "Relationship Between Land Ownership and Access Financial Services", "Land Ownership", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def sources_of_income_vs_financial_services(selected_classification):
@@ -557,7 +548,6 @@ def sources_of_income_vs_financial_services(selected_classification):
         labels={"variable": "Source of Income", "count": "Number of Participants"},
     )
     update_fig_layout(fig, "Relationship Between Sources of Income and Access to Financial Services", "Source of Income", "Number of Participants")
-    fig.show(config={'displayModeBar': False})
     return fig
 
 def financial_service_classification_map(data):
@@ -573,5 +563,4 @@ def financial_service_classification_map(data):
     )
     map_fig.update_layout(mapbox_style="open-street-map")
     update_fig_layout(map_fig, "Financial Services Classification Map", "Longitude", "Latitude")
-    fig.show(config={'displayModeBar': False})
     return map_fig
