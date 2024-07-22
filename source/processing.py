@@ -362,7 +362,10 @@ def update_fig_layout(fig, title_text, xaxis_title, yaxis_title):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
 
 
@@ -379,8 +382,6 @@ def age_distribution_graph(maped_financial_services_df):
         hover_data=["financial_service_classification"],
     )
 
-    
-    
     return fig
 
 def financial_service_by_age_graph(selected_classification):
@@ -418,8 +419,9 @@ def financial_service_by_age_graph(selected_classification):
         yaxis=dict(title="<b>Number of Participants</b>"),
         showlegend=True,
         legend_title={"text": "<b>Mobile Money Classification</b>"},
-        width=630,
-        height=410,
+        autosize=True,
+        width="100%",
+        height="100%"
     
     )
 
@@ -454,7 +456,10 @@ def gender_vs_financial_services(selected_classification):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
 
     return fig
@@ -494,7 +499,10 @@ def marital_status_vs_financial_services(selected_classification):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
     
     return fig
@@ -536,7 +544,10 @@ def personal_land_ownership_vs_financial_services(selected_classification):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
     
     return fig
@@ -581,7 +592,10 @@ def main_items_sold_vs_financial_services(selected_classification):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
     
     return fig
@@ -626,7 +640,10 @@ def employment_type_vs_financial_services(selected_classification):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
     
     return fig
@@ -671,7 +688,10 @@ def main_services_provided_vs_financial_services(selected_classification):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
     
     return fig
@@ -715,7 +735,10 @@ def land_ownership_vs_financial_services(selected_classification):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
     
     return fig
@@ -797,7 +820,10 @@ def sources_of_income_vs_financial_services(selected_classification):
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
         ),
-        margin=dict(t=50, b=50, l=50, r=50)
+        margin=dict(t=50, b=50, l=50, r=50),
+        autosize=True,
+        width="100%",
+        height="100%"
     )
     
     return fig
@@ -822,6 +848,10 @@ def financial_service_classification_map(data):
         legend=dict(
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
-        ))
+        ),
+        autosize=True,
+        width="100%",
+        height="100%")
     return map_fig
+
 
