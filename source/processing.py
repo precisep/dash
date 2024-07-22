@@ -1,7 +1,6 @@
 import pandas as pd
 from matplotlib.font_manager import FontProperties
 import matplotlib.pyplot as plt
-import seaborn as sns
 import plotly.express as px
 import warnings
 import plotly.io as pio
