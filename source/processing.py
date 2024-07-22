@@ -848,10 +848,11 @@ def financial_service_classification_map(data):
         legend=dict(
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
-        ),
         autosize=True,
         width=None,
         height=None
+        ),
+        
     return map_fig
 
 
