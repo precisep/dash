@@ -347,7 +347,7 @@ def update_fig_layout(fig, title_text, xaxis_title, yaxis_title):
     fig.update_layout(
         title={
             "text": f"<b>{title_text}</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
+            "font": {"size": 12, "family": "Arial", "color": "white"},
             "x": 0.5,
             "y": 0.95,
             "xanchor": "center",
