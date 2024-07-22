@@ -364,8 +364,8 @@ def update_fig_layout(fig, title_text, xaxis_title, yaxis_title):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
 
 
@@ -420,8 +420,8 @@ def financial_service_by_age_graph(selected_classification):
         showlegend=True,
         legend_title={"text": "<b>Mobile Money Classification</b>"},
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     
     )
 
@@ -458,8 +458,8 @@ def gender_vs_financial_services(selected_classification):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
 
     return fig
@@ -501,8 +501,8 @@ def marital_status_vs_financial_services(selected_classification):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
     
     return fig
@@ -546,8 +546,8 @@ def personal_land_ownership_vs_financial_services(selected_classification):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
     
     return fig
@@ -594,8 +594,8 @@ def main_items_sold_vs_financial_services(selected_classification):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
     
     return fig
@@ -642,8 +642,8 @@ def employment_type_vs_financial_services(selected_classification):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
     
     return fig
@@ -690,8 +690,8 @@ def main_services_provided_vs_financial_services(selected_classification):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
     
     return fig
@@ -737,8 +737,8 @@ def land_ownership_vs_financial_services(selected_classification):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
     
     return fig
@@ -822,8 +822,8 @@ def sources_of_income_vs_financial_services(selected_classification):
         ),
         margin=dict(t=50, b=50, l=50, r=50),
         autosize=True,
-        width="100%",
-        height="100%"
+        width=None,
+        height=None
     )
     
     return fig
@@ -850,8 +850,8 @@ def financial_service_classification_map(data):
             font=dict(size=10, color='white'),
         ),
         autosize=True,
-        width="100%",
-        height="100%")
+        width=None,
+        height=None
     return map_fig
 
 
