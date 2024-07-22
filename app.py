@@ -36,8 +36,8 @@ app.layout = html.Div([
 
     html.Div(className='container my-4', children=[
         html.Div(className='introduction mb-4', children=[
-            html.H4('Welcome! 👋🏾'),
             html.P('Created by Thabang P Mokoena'),
+            html.H4('Welcome! 👋🏾'),
             html.P('This dashboard explores the relationship between mobile financial service usage and demographic factors for the citizens in Tanzania.')
         ]),
 
