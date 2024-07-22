@@ -347,7 +347,7 @@ def update_fig_layout(fig, title_text, xaxis_title, yaxis_title):
     fig.update_layout(
         title={
             "text": f"<b>{title_text}</b>",
-            "font": {"size": 12, "family": "Arial", "color": "white"},
+            "font": {"size": 10, "family": "Arial", "color": "white"},
             "x": 0.5,
             "y": 0.95,
             "xanchor": "center",
@@ -361,7 +361,10 @@ def update_fig_layout(fig, title_text, xaxis_title, yaxis_title):
         legend=dict(
             title_font=dict(size=9, color='white'),
             font=dict(size=8, color='white'), 
+            bgcolor=None,  
+            bordercolor='white',
         ),
+      
         margin=dict(t=50, b=100, l=50, r=50),  
         autosize=True,
         width=None,
