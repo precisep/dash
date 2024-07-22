@@ -851,7 +851,7 @@ def financial_service_classification_map(data):
         autosize=True,
         width=None,
         height=None
-        ),
+        )
         
     return map_fig
 
