@@ -841,18 +841,21 @@ def financial_service_classification_map(data):
         height=600
     )
     map_fig.update_layout(mapbox_style="open-street-map")
-    map_fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-    map_fig.update_layout( font=dict(color='white'),
+    map_fig.update_layout(
+        font=dict(color='white'),
         legend_title_text="Financial Services Access",
         legend_title_font=dict(size=13, color='white'),
         legend=dict(
             title_font=dict(size=13, color='white'),
             font=dict(size=10, color='white'),
+        ),
+        margin={"r": 0, "t": 0, "l": 0, "b": 0},
         autosize=True,
         width=None,
         height=None
-        )
-        
+    )
+    
     return map_fig
+
 
 
