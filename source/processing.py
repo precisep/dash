@@ -357,23 +357,24 @@ def update_fig_layout(fig, title_text, xaxis_title, yaxis_title):
         yaxis=dict(title=f"<b>{yaxis_title}</b>", color='white'),
         font=dict(color='white'),
         legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
+        legend_title_font=dict(size=12, color='white'),
         legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
+            orientation="h",  # Horizontal orientation
+            title_font=dict(size=12, color='white'),
+            font=dict(size=8, color='white'),  # Smaller font size
+            yanchor="bottom",  # Place legend at the bottom
+            y=-0.2,  # Adjust vertical position
+            xanchor="center",
+            x=0.5,
         ),
-        margin=dict(t=50, b=50, l=50, r=50),
+        margin=dict(t=50, b=100, l=50, r=50),  # Increase bottom margin to accommodate the legend
         autosize=True,
         width=None,
         height=None
     )
 
-
-
 def age_distribution_graph(maped_financial_services_df):
-
     df = maped_financial_services_df
-
     fig = px.box(
         df,
         x="financial_service_classification",
@@ -381,11 +382,11 @@ def age_distribution_graph(maped_financial_services_df):
         color="financial_service_classification",
         hover_data=["financial_service_classification"],
     )
-
+    update_fig_layout(fig, "Age Distribution by Financial Service Classification", "Financial Service Classification", "Age")
     return fig
 
 def financial_service_by_age_graph(selected_classification):
-    maped_financial_services_df = dataset(selected_classification)  
+    maped_financial_services_df = dataset(selected_classification)
     financial_service_by_age = (
         maped_financial_services_df.groupby(["age", "financial_service_classification"])
         .size()
@@ -405,30 +406,11 @@ def financial_service_by_age_graph(selected_classification):
     )
 
     fig.update_traces(marker=dict(size=12, opacity=0.8))
-
-    fig.update_layout(
-        title={
-            "text": "<b> Number of Participants at Each Age by Financial Service Classification</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(title="<b>Age</b>"),
-        yaxis=dict(title="<b>Number of Participants</b>"),
-        showlegend=True,
-        legend_title={"text": "<b>Mobile Money Classification</b>"},
-        autosize=True,
-        width=None,
-        height=None
-    
-    )
-
+    update_fig_layout(fig, "Number of Participants at Each Age by Financial Service Classification", "Age", "Number of Participants")
     return fig
 
 def gender_vs_financial_services(selected_classification):
-    maped_financial_services_df = dataset(selected_classification) 
+    maped_financial_services_df = dataset(selected_classification)
     fig = px.histogram(
         maped_financial_services_df,
         x="gender",
@@ -437,35 +419,11 @@ def gender_vs_financial_services(selected_classification):
         labels={"gender": "Gender", "count": "Number of Participants"},
         title="Relationship Between Gender and Access to Financial Services",
     )
-
-    fig.update_layout(
-        title={
-            "text": "<b>Relationship Between Gender and Access to Financial Services</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(title="<b>Gender</b>", color='white'),
-        yaxis=dict(title="<b>Number of Participants</b>", color='white'),
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin=dict(t=50, b=50, l=50, r=50),
-        autosize=True,
-        width=None,
-        height=None
-    )
-
+    update_fig_layout(fig, "Relationship Between Gender and Access to Financial Services", "Gender", "Number of Participants")
     return fig
 
 def marital_status_vs_financial_services(selected_classification):
-    maped_financial_services_df = dataset(selected_classification) 
+    maped_financial_services_df = dataset(selected_classification)
     fig = px.histogram(
         maped_financial_services_df,
         x="marital_status",
@@ -473,85 +431,20 @@ def marital_status_vs_financial_services(selected_classification):
         title="Relationship Between Marital Status and Access to Financial Services",
         labels={"marital_status": "Marital Status", "count": "Number of Participants"}
     )
-    
-    fig.update_layout(
-        title={
-            "text": "<b>Relationship Between Marital Status and Access to Financial Services</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(
-            title="<b>Marital Status</b>",
-            tickangle=-45,
-            color='white'
-        ),
-        yaxis=dict(
-            title="<b>Number of Participants</b>",
-            color='white'
-        ),
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin=dict(t=50, b=50, l=50, r=50),
-        autosize=True,
-        width=None,
-        height=None
-    )
-    
+    update_fig_layout(fig, "Relationship Between Marital Status and Access to Financial Services", "Marital Status", "Number of Participants")
     return fig
 
 def personal_land_ownership_vs_financial_services(selected_classification):
     maped_financial_services_df = dataset(selected_classification)
-    fig =  px.histogram(
+    fig = px.histogram(
         maped_financial_services_df,
         x="personal_land_ownership",
         color="financial_service_classification",
         title="Personal Land Ownership and Access to Financial Services",
         labels={"personal_land_ownership": "Personal Land Ownership", "count": "Number of Participants"},
     )
-    
-    fig.update_layout(
-        title={
-            "text": "<b>Personal Land Ownership and Access to Financial Services</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(
-            title="<b>Personal Land Ownership</b>",
-            tickangle=-45,
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        yaxis=dict(
-            title="<b>Number of Participants</b>",
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin=dict(t=50, b=50, l=50, r=50),
-        autosize=True,
-        width=None,
-        height=None
-    )
-    
+    update_fig_layout(fig, "Personal Land Ownership and Access to Financial Services", "Personal Land Ownership", "Number of Participants")
     return fig
-
 
 def main_items_sold_vs_financial_services(selected_classification):
     maped_financial_services_df = dataset(selected_classification)
@@ -564,42 +457,8 @@ def main_items_sold_vs_financial_services(selected_classification):
         title="Main Items Sold by Traders/Sellers by Financial Service Access",
         labels={"main_items_sold": "Main Items Sold", "count": "Number of Participants"},
     )
-    
-    fig.update_layout(
-        title={
-            "text": "<b>Main Items Sold by Traders/Sellers by Financial Service Access</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(
-            title="<b>Main Items Sold</b>",
-            tickangle=-45,
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        yaxis=dict(
-            title="<b>Number of Participants</b>",
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin=dict(t=50, b=50, l=50, r=50),
-        autosize=True,
-        width=None,
-        height=None
-    )
-    
+    update_fig_layout(fig, "Main Items Sold by Traders/Sellers by Financial Service Access", "Main Items Sold", "Number of Participants")
     return fig
-
 
 def employment_type_vs_financial_services(selected_classification):
     maped_financial_services_df = dataset(selected_classification)
@@ -612,42 +471,8 @@ def employment_type_vs_financial_services(selected_classification):
         title="Employment Type for Salary/Wage Earners by Financial Service Access",
         labels={"employer": "Employment Type", "count": "Number of Participants"},
     )
-    
-    fig.update_layout(
-        title={
-            "text": "<b>Employment Type for Salary/Wage Earners by Financial Service Access</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(
-            title="<b>Employment Type</b>",
-            tickangle=-45,
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        yaxis=dict(
-            title="<b>Number of Participants</b>",
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin=dict(t=50, b=50, l=50, r=50),
-        autosize=True,
-        width=None,
-        height=None
-    )
-    
+    update_fig_layout(fig, "Employment Type for Salary/Wage Earners by Financial Service Access", "Employment Type", "Number of Participants")
     return fig
-
 
 def main_services_provided_vs_financial_services(selected_classification):
     maped_financial_services_df = dataset(selected_classification)
@@ -660,89 +485,21 @@ def main_services_provided_vs_financial_services(selected_classification):
         title="Main Services Provided by Service Providers by Financial Service Access",
         labels={"main_services_provided": "Main Services Provided", "count": "Number of Participants"},
     )
-    
-    fig.update_layout(
-        title={
-            "text": "<b>Main Services Provided by Service Providers by Financial Service Access</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(
-            title="<b>Main Services Provided</b>",
-            tickangle=-45,
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        yaxis=dict(
-            title="<b>Number of Participants</b>",
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin=dict(t=50, b=50, l=50, r=50),
-        autosize=True,
-        width=None,
-        height=None
-    )
-    
+    update_fig_layout(fig, "Main Services Provided by Service Providers by Financial Service Access", "Main Services Provided", "Number of Participants")
     return fig
-
 
 def land_ownership_vs_financial_services(selected_classification):
     maped_financial_services_df = dataset(selected_classification)
     
-    fig =  px.histogram(
+    fig = px.histogram(
         maped_financial_services_df,
         x="land_ownership",
         color="financial_service_classification",
         title="Relationship Between Land Ownership and Access Financial Services",
         labels={"land_ownership": "Land Ownership", "count": "Number of Participants"},
     )
-    
-    fig.update_layout(
-        title={
-            "text": "<b>Relationship Between Land Ownership and Access Financial Services</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(
-            title="<b>Land Ownership</b>",
-            tickangle=-45,
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        yaxis=dict(
-            title="<b>Number of Participants</b>",
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin=dict(t=50, b=50, l=50, r=50),
-        autosize=True,
-        width=None,
-        height=None
-    )
-    
+    update_fig_layout(fig, "Relationship Between Land Ownership and Access Financial Services", "Land Ownership", "Number of Participants")
     return fig
-
 
 def sources_of_income_vs_financial_services(selected_classification):
     maped_financial_services_df = dataset(selected_classification)
@@ -792,42 +549,8 @@ def sources_of_income_vs_financial_services(selected_classification):
         title="Relationship Between Sources of Income and Access to Financial Services",
         labels={"variable": "Source of Income", "count": "Number of Participants"},
     )
-    
-    fig.update_layout(
-        title={
-            "text": "<b>Relationship Between Sources of Income and Access to Financial Services</b>",
-            "font": {"size": 16, "family": "Arial", "color": "white"},
-            "x": 0.5,
-            "y": 0.95,
-            "xanchor": "center",
-            "yanchor": "top",
-        },
-        xaxis=dict(
-            title="<b>Source of Income</b>",
-            tickangle=-45,
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        yaxis=dict(
-            title="<b>Number of Participants</b>",
-            tickfont=dict(size=10, color="white"),
-            color='white'
-        ),
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin=dict(t=50, b=50, l=50, r=50),
-        autosize=True,
-        width=None,
-        height=None
-    )
-    
+    update_fig_layout(fig, "Relationship Between Sources of Income and Access to Financial Services", "Source of Income", "Number of Participants")
     return fig
-
 
 def financial_service_classification_map(data):
     map_fig = px.scatter_mapbox(
@@ -841,21 +564,5 @@ def financial_service_classification_map(data):
         height=600
     )
     map_fig.update_layout(mapbox_style="open-street-map")
-    map_fig.update_layout(
-        font=dict(color='white'),
-        legend_title_text="Financial Services Access",
-        legend_title_font=dict(size=13, color='white'),
-        legend=dict(
-            title_font=dict(size=13, color='white'),
-            font=dict(size=10, color='white'),
-        ),
-        margin={"r": 0, "t": 0, "l": 0, "b": 0},
-        autosize=True,
-        width=None,
-        height=None
-    )
-    
+    update_fig_layout(map_fig, "Financial Services Classification Map", "Longitude", "Latitude")
     return map_fig
-
-
-
